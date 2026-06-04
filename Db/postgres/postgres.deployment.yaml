@@ -15,9 +15,10 @@ spec:
       labels:
         app: postgres
     spec:
+      restartPolicy: Always
       containers:
         - name: postgres
-          image: postgres:15
+          image: postgres:16
           ports:
             - containerPort: 5432
           envFrom:
