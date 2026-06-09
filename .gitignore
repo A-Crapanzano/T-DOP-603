@@ -1,0 +1,48 @@
+# ===== Secrets Kubernetes =====
+# Ne JAMAIS committer de Secret en clair
+*.secret.yaml
+*.secret.yml
+*-secret.yaml
+*-secret.yml
+secrets/
+.env
+.env.*
+!.env.example
+
+# ===== macOS =====
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# ===== Éditeurs / IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ===== Logs & temp =====
+*.log
+logs/
+tmp/
+*.tmp
+*.bak
+
+# ===== Kubernetes local =====
+kubeconfig
+*.kubeconfig
+.kube/
+
+# ===== Build / dépendances =====
+node_modules/
+dist/
+build/
+target/
+
+
+guide.html
