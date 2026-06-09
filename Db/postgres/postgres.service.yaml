@@ -4,6 +4,7 @@ metadata:
   name: postgres-service
   namespace: default
 spec:
+  clusterIP: None          
   selector:
     app: postgres
   ports:
