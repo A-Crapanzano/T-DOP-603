@@ -41,6 +41,6 @@ spec:
                 secretKeyRef:
                   name: postgres-secret
                   key: POSTGRES_PASSWORD
-          resources:
+          resources
             limits:
               memory: 256M
