@@ -24,9 +24,9 @@ spec:
           image: epitechcontent/t-dop-600-poll:k8s
           ports:
             - containerPort: 80
-          env:
-            - name: REDIS_HOST
-              value: redis
+          envFrom:
+            - configMapRef:
+                name: redis-config
           resources:
             limits:
               memory: 128M
