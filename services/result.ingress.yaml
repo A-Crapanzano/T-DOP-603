@@ -3,8 +3,9 @@ kind: Ingress
 metadata:
   name: result
   namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
 spec:
-  ingressClassName: traefik
   rules:
     - host: result.dop.io
       http:

@@ -15,10 +15,12 @@ spec:
       restartPolicy: Always
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchLabels: { app: poll }
-              topologyKey: kubernetes.io/hostname
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels: { app: poll }
+                topologyKey: kubernetes.io/hostname
       containers:
         - name: poll
           image: epitechcontent/t-dop-600-poll:k8s

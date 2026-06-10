@@ -17,11 +17,13 @@ spec:
     spec:
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchLabels:
-                  app: result
-              topologyKey: kubernetes.io/hostname
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: result
+                topologyKey: kubernetes.io/hostname
       containers:
         - name: result
           image: epitechcontent/t-dop-600-result:k8s
@@ -30,8 +32,17 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-configmap
-            - secretRef:
-                name: postgres-secret
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: password
           resources:
             limits:
               memory: "128M"

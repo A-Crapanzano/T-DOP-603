@@ -1,5 +1,4 @@
-# ===== Secrets Kubernetes =====
-# Ne JAMAIS committer de Secret en clair
+
 *.secret.yaml
 *.secret.yml
 *-secret.yaml
@@ -10,14 +9,12 @@ secrets/
 !.env.example
 Db/postgres/postgres.secret.yaml
 
-# ===== macOS =====
 .DS_Store
 .AppleDouble
 .LSOverride
 Icon?
 ._*
 
-# ===== Éditeurs / IDE =====
 .vscode/
 .idea/
 *.swp
@@ -27,19 +24,16 @@ Icon?
 .classpath
 .settings/
 
-# ===== Logs & temp =====
 *.log
 logs/
 tmp/
 *.tmp
 *.bak
 
-# ===== Kubernetes local =====
 kubeconfig
 *.kubeconfig
 .kube/
 
-# ===== Build / dépendances =====
 node_modules/
 dist/
 build/
