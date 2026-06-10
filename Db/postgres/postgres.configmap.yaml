@@ -9,3 +9,5 @@ data:
   POSTGRES_HOST: postgres-service
   POSTGRES_PORT: '5432'
   POSTGRES_DB: vote
+  POSTGRES_HOST_AUTH_METHOD: md5
+  POSTGRES_INITDB_ARGS: "--auth-host=md5 --auth-local=md5"
