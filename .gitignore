@@ -8,6 +8,7 @@ secrets/
 .env
 .env.*
 !.env.example
+Db/postgres/postgres.secret.yaml
 
 # ===== macOS =====
 .DS_Store
